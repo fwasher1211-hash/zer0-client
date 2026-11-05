@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "zer0client",
+  "version": "${version}",
+  "name": "ZER0 CLIENT",
+  "description": "A premium frosted-glass client for Minecraft: redesigned main menu, hub, layouts, backgrounds, fonts and a Spotify HUD. Built on the MIT-licensed DonutSMP Streamer Utility's by Forsurewater - all of its features are kept.",
+  "authors": [ "ZER0 CLIENT", "Forsurewater (original DonutSMP Streamer Utility's, MIT)" ],
+  "license": "MIT",
+  "icon": "assets/zer0client/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [ "com.example.donutqueue.DonutQueueClient", "dev.zer0.client.Zer0Client" ],
+    "modmenu": [ "com.example.donutqueue.ModMenuIntegration" ]
+  },
+  "mixins": [ "donutqueue.mixins.json", "zer0client.mixins.json" ],
+  "depends": {
+    "fabricloader": ">=0.18.4",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "recommends": { "modmenu": "*" },
+  "jars": [
+    { "file": "META-INF/jars/jlayer-1.0.1.4.jar" },
+    { "file": "META-INF/jars/mp3spi-1.9.5.4.jar" },
+    { "file": "META-INF/jars/tritonus-share-0.3.7.4.jar" }
+  ]
+}

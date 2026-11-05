@@ -1,0 +1,17 @@
+# id,url[,fallback url...]   -> src/main/resources/assets/zer0client/font/<id>.ttf
+# Variable fonts render their default (Regular) instance; "bold" uses Minecraft's bold style.
+inter,https://github.com/google/fonts/raw/main/ofl/inter/Inter%5Bopsz%2Cwght%5D.ttf
+poppins,https://github.com/google/fonts/raw/main/ofl/poppins/Poppins-Regular.ttf
+montserrat,https://github.com/google/fonts/raw/main/ofl/montserrat/Montserrat%5Bwght%5D.ttf
+manrope,https://github.com/google/fonts/raw/main/ofl/manrope/Manrope%5Bwght%5D.ttf
+outfit,https://github.com/google/fonts/raw/main/ofl/outfit/Outfit%5Bwght%5D.ttf
+roboto,https://github.com/google/fonts/raw/main/ofl/roboto/Roboto%5Bwdth%2Cwght%5D.ttf,https://github.com/google/fonts/raw/main/apache/roboto/static/Roboto-Regular.ttf
+plusjakartasans,https://github.com/google/fonts/raw/main/ofl/plusjakartasans/PlusJakartaSans%5Bwght%5D.ttf
+dmsans,https://github.com/google/fonts/raw/main/ofl/dmsans/DMSans%5Bopsz%2Cwght%5D.ttf
+spacegrotesk,https://github.com/google/fonts/raw/main/ofl/spacegrotesk/SpaceGrotesk%5Bwght%5D.ttf
+nunito,https://github.com/google/fonts/raw/main/ofl/nunito/Nunito%5Bwght%5D.ttf
+sora,https://github.com/google/fonts/raw/main/ofl/sora/Sora%5Bwght%5D.ttf
+lexend,https://github.com/google/fonts/raw/main/ofl/lexend/Lexend%5Bwght%5D.ttf
+urbanist,https://github.com/google/fonts/raw/main/ofl/urbanist/Urbanist%5Bwght%5D.ttf
+figtree,https://github.com/google/fonts/raw/main/ofl/figtree/Figtree%5Bwght%5D.ttf
+rubik,https://github.com/google/fonts/raw/main/ofl/rubik/Rubik%5Bwght%5D.ttf

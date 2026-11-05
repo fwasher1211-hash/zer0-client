@@ -1,0 +1,1 @@
+package net.minecraft.item; public class ItemStack { public static final ItemStack EMPTY = null; public boolean isEmpty(){return true;} public Item getItem(){return null;} public int getCount(){return 1;} }

@@ -1,0 +1,1 @@
+package net.minecraft.text; public class Style { public static final Style EMPTY = new Style(); public boolean bold; public Object font; public Style withFont(StyleSpriteSource s){Style n=new Style(); n.bold=bold; n.font=s; return n;} public Style withBold(Boolean b){Style n=new Style(); n.bold=b; n.font=font; return n;} }

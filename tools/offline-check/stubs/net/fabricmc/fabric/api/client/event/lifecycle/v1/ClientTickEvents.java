@@ -1,0 +1,1 @@
+package net.fabricmc.fabric.api.client.event.lifecycle.v1; public class ClientTickEvents { public static net.fabricmc.fabric.api.event.Event<EndTick> END_CLIENT_TICK; public interface EndTick { void onEndTick(net.minecraft.client.MinecraftClient c); } }

@@ -1,0 +1,1 @@
+package net.minecraft.client.gui.screen.multiplayer; public class ConnectScreen { public static void connect(net.minecraft.client.gui.screen.Screen s, net.minecraft.client.MinecraftClient c, net.minecraft.client.network.ServerAddress a, net.minecraft.client.network.ServerInfo i, boolean qp, Object cookie){} }

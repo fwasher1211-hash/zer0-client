@@ -1,0 +1,6 @@
+Fonts are downloaded at build time (fonts.csv) from github.com/google/fonts.
+Inter, Poppins, Montserrat, Manrope, Outfit, Plus Jakarta Sans, DM Sans, Space Grotesk,
+Nunito, Sora, Lexend, Urbanist, Figtree and Rubik: SIL Open Font License 1.1.
+Roboto: Apache License 2.0 / OFL depending on release.
+Both licenses allow bundling and redistribution inside software. Each family's license
+file sits next to the font in the google/fonts repository; ship those with releases.

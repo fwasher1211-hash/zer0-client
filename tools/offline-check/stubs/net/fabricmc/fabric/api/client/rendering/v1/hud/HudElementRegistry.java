@@ -1,0 +1,1 @@
+package net.fabricmc.fabric.api.client.rendering.v1.hud; public interface HudElementRegistry { static void attachElementAfter(net.minecraft.util.Identifier a, net.minecraft.util.Identifier id, HudElement e){} }

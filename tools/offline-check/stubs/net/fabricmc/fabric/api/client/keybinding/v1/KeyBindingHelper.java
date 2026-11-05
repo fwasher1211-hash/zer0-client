@@ -1,0 +1,1 @@
+package net.fabricmc.fabric.api.client.keybinding.v1; public class KeyBindingHelper { public static net.minecraft.client.option.KeyBinding registerKeyBinding(net.minecraft.client.option.KeyBinding k){return k;} }

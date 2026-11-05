@@ -1,0 +1,1 @@
+package net.minecraft.text; public class MutableText implements Text { public final String s; public Style style = Style.EMPTY; public MutableText(String s){this.s=s;} public MutableText setStyle(Style st){this.style=st; return this;} public String getString(){return s;} }

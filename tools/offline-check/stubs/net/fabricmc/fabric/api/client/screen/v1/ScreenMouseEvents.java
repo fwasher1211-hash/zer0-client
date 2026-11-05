@@ -1,0 +1,1 @@
+package net.fabricmc.fabric.api.client.screen.v1; public class ScreenMouseEvents { public static net.fabricmc.fabric.api.event.Event<AllowMouseClick> allowMouseClick(net.minecraft.client.gui.screen.Screen s){return null;} public interface AllowMouseClick { boolean allowMouseClick(net.minecraft.client.gui.screen.Screen s, net.minecraft.client.gui.Click c); } }

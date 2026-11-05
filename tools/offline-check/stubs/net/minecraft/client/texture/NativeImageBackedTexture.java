@@ -1,0 +1,1 @@
+package net.minecraft.client.texture; public class NativeImageBackedTexture extends AbstractTexture { public final NativeImage image; public NativeImageBackedTexture(java.util.function.Supplier<String> n, NativeImage i){image=i;} }

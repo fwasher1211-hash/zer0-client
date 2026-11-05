@@ -1,0 +1,1 @@
+package net.minecraft.client.option; public class KeyBinding { public static class Category { public static Category create(net.minecraft.util.Identifier id){return null;} } public KeyBinding(String k,int code,Category c){} public boolean wasPressed(){return false;} }

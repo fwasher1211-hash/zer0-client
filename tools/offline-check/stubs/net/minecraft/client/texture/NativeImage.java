@@ -1,0 +1,1 @@
+package net.minecraft.client.texture; public class NativeImage { public java.awt.image.BufferedImage img; public static NativeImage read(java.io.InputStream in) throws java.io.IOException { NativeImage n=new NativeImage(); n.img=javax.imageio.ImageIO.read(in); return n; } }

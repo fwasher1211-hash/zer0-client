@@ -1,0 +1,1 @@
+package net.minecraft.client.gui.screen.world; public class SelectWorldScreen extends net.minecraft.client.gui.screen.Screen { public SelectWorldScreen(net.minecraft.client.gui.screen.Screen p){super(null);} }

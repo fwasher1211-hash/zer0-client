@@ -1,0 +1,1 @@
+package net.fabricmc.fabric.api.client.screen.v1; public class ScreenEvents { public static net.fabricmc.fabric.api.event.Event<AfterInit> AFTER_INIT; public interface AfterInit { void afterInit(net.minecraft.client.MinecraftClient c, net.minecraft.client.gui.screen.Screen s, int w, int h); } }

@@ -1,0 +1,1 @@
+package net.minecraft.client.gui.screen.option; public class OptionsScreen extends net.minecraft.client.gui.screen.Screen { public OptionsScreen(net.minecraft.client.gui.screen.Screen p, net.minecraft.client.option.GameOptions o){super(null);} }

@@ -1,0 +1,1 @@
+package net.minecraft.client.gui.screen.option; public class KeybindsScreen extends net.minecraft.client.gui.screen.Screen { public KeybindsScreen(net.minecraft.client.gui.screen.Screen p, net.minecraft.client.option.GameOptions o){super(null);} }

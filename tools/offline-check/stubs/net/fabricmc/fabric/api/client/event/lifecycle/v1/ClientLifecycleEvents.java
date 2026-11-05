@@ -1,0 +1,1 @@
+package net.fabricmc.fabric.api.client.event.lifecycle.v1; public class ClientLifecycleEvents { public static net.fabricmc.fabric.api.event.Event<ClientStopping> CLIENT_STOPPING; public interface ClientStopping { void onClientStopping(net.minecraft.client.MinecraftClient c); } }

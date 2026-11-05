@@ -1,0 +1,84 @@
+plugins {
+    id 'fabric-loom' version "${loom_version}"
+}
+
+version = project.mod_version
+group = project.maven_group
+base { archivesName = project.archives_base_name }
+
+repositories { mavenCentral() }
+
+loom {
+    mixin { defaultRefmapName = 'zer0client.refmap.json' }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+    // The original mod: ZER0 compiles against it and the final jar contains it.
+    modCompileOnly files("libs/${project.original_jar}")
+}
+
+processResources {
+    inputs.property 'version', project.version
+    filesMatching('fabric.mod.json') { expand 'version': project.version }
+}
+
+tasks.withType(JavaCompile).configureEach { it.options.release = 21; it.options.encoding = 'UTF-8' }
+java { sourceCompatibility = JavaVersion.VERSION_21; targetCompatibility = JavaVersion.VERSION_21 }
+
+// ---------------------------------------------------------------------------------
+// Fonts are downloaded at build time from github.com/google/fonts (SIL OFL /
+// Apache-2.0: redistribution allowed). A font that fails to download is skipped and
+// the in-game picker simply does not list it -- nothing breaks.
+// ---------------------------------------------------------------------------------
+tasks.register('fetchFonts') {
+    def outDir = file('src/main/resources/assets/zer0client/font')
+    def list = file('fonts.csv')
+    inputs.file(list)
+    outputs.dir(outDir)
+    doLast {
+        outDir.mkdirs()
+        list.eachLine { String line ->
+            line = line.trim()
+            if (line.isEmpty() || line.startsWith('#')) return
+            def parts = line.split(',')
+            def target = new File(outDir, parts[0] + '.ttf')
+            if (target.exists() && target.length() > 10000) return
+            boolean ok = false
+            for (int i = 1; i < parts.length && !ok; i++) {
+                try {
+                    def conn = new URL(parts[i].trim()).openConnection()
+                    conn.setRequestProperty('User-Agent', 'zer0-client-build')
+                    conn.connectTimeout = 15000; conn.readTimeout = 60000
+                    conn.inputStream.withCloseable { ins -> target.withOutputStream { it << ins } }
+                    if (target.length() > 10000) { ok = true; println "font ok      : ${parts[0]}" } else { target.delete() }
+                } catch (Exception ignored) { target.delete() }
+            }
+            if (!ok) println "font SKIPPED : ${parts[0]} (download failed - the client will not list it)"
+        }
+    }
+}
+processResources.dependsOn 'fetchFonts'
+
+// ---------------------------------------------------------------------------------
+// Final jar = ZER0 (remapped) + the original mod's classes, nested libraries and assets.
+// The original fabric.mod.json / lang / icon are replaced by ZER0's.
+// ---------------------------------------------------------------------------------
+tasks.register('zer0Jar', Jar) {
+    group = 'build'
+    description = 'Builds build/dist/ZER0-CLIENT-<version>.jar (ZER0 + original mod, one file).'
+    dependsOn tasks.named('remapJar')
+    archiveBaseName = 'ZER0-CLIENT'
+    archiveVersion = project.version
+    destinationDirectory = layout.buildDirectory.dir('dist')
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from(zipTree(tasks.named('remapJar').flatMap { it.archiveFile }))
+    from(zipTree(file("libs/${project.original_jar}"))) {
+        exclude 'fabric.mod.json', 'META-INF/MANIFEST.MF', 'assets/donutqueue/lang/en_us.json', 'assets/donutqueue/icon.png'
+    }
+}
+tasks.named('build') { dependsOn 'zer0Jar' }

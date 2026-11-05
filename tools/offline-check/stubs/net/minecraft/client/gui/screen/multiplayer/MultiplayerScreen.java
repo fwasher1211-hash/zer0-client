@@ -1,0 +1,1 @@
+package net.minecraft.client.gui.screen.multiplayer; public class MultiplayerScreen extends net.minecraft.client.gui.screen.Screen { public MultiplayerScreen(net.minecraft.client.gui.screen.Screen p){super(null);} }

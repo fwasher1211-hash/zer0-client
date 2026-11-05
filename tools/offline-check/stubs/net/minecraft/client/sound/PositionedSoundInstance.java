@@ -1,0 +1,1 @@
+package net.minecraft.client.sound; public class PositionedSoundInstance implements SoundInstance { public static PositionedSoundInstance master(net.minecraft.registry.entry.RegistryEntry<net.minecraft.sound.SoundEvent> e, float p){return null;} }

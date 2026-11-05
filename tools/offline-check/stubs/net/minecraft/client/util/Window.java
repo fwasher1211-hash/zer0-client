@@ -1,0 +1,1 @@
+package net.minecraft.client.util; public class Window { public static int SCALE=3, W=640, H=360; public int getScaleFactor(){return SCALE;} public int getScaledWidth(){return W;} public int getScaledHeight(){return H;} }

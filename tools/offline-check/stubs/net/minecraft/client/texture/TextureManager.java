@@ -1,0 +1,1 @@
+package net.minecraft.client.texture; public class TextureManager { public final java.util.Map<net.minecraft.util.Identifier, AbstractTexture> map=new java.util.HashMap<>(); public void registerTexture(net.minecraft.util.Identifier id, AbstractTexture t){map.put(id,t);} public void destroyTexture(net.minecraft.util.Identifier id){map.remove(id);} }

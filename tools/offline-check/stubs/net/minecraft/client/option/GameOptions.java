@@ -1,0 +1,1 @@
+package net.minecraft.client.option; public class GameOptions { public boolean hudHidden; SimpleOption<Integer> blur = new SimpleOption<>(5); public SimpleOption<Integer> getMenuBackgroundBlurriness(){return blur;} public void write(){} }
